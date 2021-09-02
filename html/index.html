@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons and Dragons 5th Edition Combat Manager</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 id="tool-title">Combat Manager</h1>
+    <div class="main-container">
+        <h2 id="tool-subtitle">Add creature to combat</h2>
+        <form>
+            <div class="form-group">
+                <label for="creature-name">Name:</label>
+                <input maxlength="20" type="text" name="creature-name" id="creature-name">
+            </div>
+            <div class="form-group">
+                <label for="creature-name">DEX Score:</label>
+                <input maxlength="2" type="text" name="dex-score" id="dex-score">
+            </div>
+            <div class="form-group">
+                <label maxlength="2" for="initiative-bonuses">Initiative Bonuses:</label>
+                <input type="text" name="initiative-bonuses" id="initiative-bonuses">
+            </div>
+            <button type="button" id="add-button">Add to combat</button>      
+        </form>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="1">Name</th>
+                    <th colspan="2">Initiative</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="combat-list">
+
+            </tbody>
+        </table>
+    </div>
+        
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

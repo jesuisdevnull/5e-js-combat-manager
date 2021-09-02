@@ -1,0 +1,989 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"column-",
+				"column-span"
+			],
+			[
+				"mari",
+				"margin"
+			],
+			[
+				"creature",
+				"creatureToDeleteID"
+			],
+			[
+				"for",
+				"for"
+			],
+			[
+				"encoun",
+				"encounterReference"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"h",
+				"h1"
+			],
+			[
+				"coun",
+				"countLeaves"
+			],
+			[
+				"dele",
+				"delete"
+			],
+			[
+				"left",
+				"left"
+			],
+			[
+				"start",
+				"start"
+			],
+			[
+				"ge",
+				"getPredecessor"
+			],
+			[
+				"g",
+				"getPredecessor"
+			],
+			[
+				"ma",
+				"max"
+			],
+			[
+				"inO",
+				"inOrderPredecessor"
+			],
+			[
+				"in",
+				"inOrder"
+			],
+			[
+				"Rec",
+				"ReflectiveOperationException"
+			],
+			[
+				"getMa",
+				"getMaxHelper"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"form",
+				"formaXY"
+			],
+			[
+				"String",
+				"StringBuilder"
+			],
+			[
+				"StringB",
+				"StringBuilder"
+			],
+			[
+				"des",
+				"destination"
+			],
+			[
+				"S",
+				"Stack"
+			],
+			[
+				"l",
+				"lim"
+			],
+			[
+				"Lin",
+				"LinkedList"
+			],
+			[
+				"input",
+				"input"
+			],
+			[
+				"deterine",
+				"determineDay"
+			],
+			[
+				"deter",
+				"determineDay"
+			],
+			[
+				"mont",
+				"monthCounter"
+			],
+			[
+				"is",
+				"isSwitchYear"
+			],
+			[
+				"calendar",
+				"calendarData"
+			],
+			[
+				"year",
+				"year"
+			],
+			[
+				"de",
+				"determineMonth"
+			],
+			[
+				"ONE",
+				"ONE"
+			],
+			[
+				"comput",
+				"computeEuler"
+			],
+			[
+				"perc",
+				"percentageOfA"
+			],
+			[
+				"per",
+				"percentageOfB"
+			],
+			[
+				"percent",
+				"percentageOfA"
+			],
+			[
+				"inputG",
+				"inputGetterB"
+			],
+			[
+				"displayNu",
+				"displayNumberPlusFive"
+			],
+			[
+				"disp",
+				"displayNumberSquared"
+			],
+			[
+				"displa",
+				"displayNumberPlusFive"
+			],
+			[
+				"displ",
+				"displayTwiceTheNumber"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "css/styles.css",
+			"settings":
+			{
+				"buffer_size": 1272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "html/index.html",
+			"settings":
+			{
+				"buffer_size": 1656,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/script.js",
+			"settings":
+			{
+				"buffer_size": 5563,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"live",
+				"Live Server: Open In Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"Snippet: ",
+				"Snippet: java.util."
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"Jva",
+				"Set Syntax: Java"
+			],
+			[
+				"ja",
+				"Set Syntax: Java"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/heisei/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/heisei/Desktop/Netbeans IDE.desktop",
+		"/home/heisei/NetBeansProjects/ProyectoPDA/dist/Formato para agregar productos a inventario manualmente modificando ARTICULOS.txt",
+		"/home/heisei/NetBeansProjects/ProyectoPDA/dist/ejecutable.bat",
+		"/home/heisei/Downloads/README.md",
+		"/home/heisei/Desktop/Instrucciones de uso.txt",
+		"/home/heisei/Desktop/Respuestas preguntas de texto examen.txt",
+		"/home/heisei/Desktop/Semiconductores.txt",
+		"/home/heisei/Documents/Entertainment/ROMs/xdelta-3.1.0/xdelta3/README.md",
+		"/run/user/1000/gvfs/archive:host=file%253A%252F%252F%252Fhome%252Fheisei%252FDocuments%252FEntertainment%252FDRM%252520Free%252FWarcraft%252520III%252520Reign%252520of%252520Chaos.iso/ReadMe.txt",
+		"/home/heisei/Downloads/guion.txt",
+		"/home/heisei/Downloads/Conteo.txt",
+		"/home/heisei/Desktop/Obtener todos los nodos con un solo hijo.txt",
+		"/home/heisei/Desktop/Reporte Nivel y Nivel Reverso.txt",
+		"/home/heisei/Desktop/Parcial 2 PDA/Nombres de Variables.txt",
+		"/home/heisei/Desktop/Arbol AVL con movimientos de nodo mas accesado.",
+		"/home/heisei/Desktop/RecursiveTree.java",
+		"/home/heisei/Desktop/Funkin/CHANGELOG.md",
+		"/home/heisei/Desktop/Funkin/Funkin",
+		"/home/heisei/Desktop/Ejercicios.java",
+		"/home/heisei/Desktop/Información de entrega.txt",
+		"/home/heisei/Downloads/Deque.java",
+		"/home/heisei/git/datosIII2020-p1/README.md",
+		"/home/heisei/Desktop/README.md",
+		"/home/heisei/Downloads/Compressed/Katawa Shoujo-1.3.1-linux/Katawa Shoujo.sh",
+		"/home/heisei/Downloads/OrdenaNumeros.java",
+		"/home/heisei/Desktop/DipolosAeropuerto.txt",
+		"/home/heisei/Desktop/Ejercicios Datos",
+		"/home/heisei/Desktop/PostFija.txt",
+		"/home/heisei/Desktop/invertirCola.txt",
+		"/home/heisei/Desktop/ColaLineal.java",
+		"/home/heisei/Desktop/StackPractice.java",
+		"/home/heisei/Desktop/PilaLineal.java",
+		"/home/heisei/Desktop/multiplosDeCincoYSiete.txt",
+		"/home/heisei/Desktop/cadenaPalindromo.txt",
+		"/home/heisei/Desktop/correciones.txt",
+		"/home/heisei/Desktop/Pseudocodigo Supermercado.txt",
+		"/home/heisei/Desktop/compararParentesis",
+		"/home/heisei/Desktop/Algos/Pseudocodigo Ejercicio Servidores.txt",
+		"/home/heisei/Desktop/Pseudocodigo Ejercicio Servidores.txt",
+		"/home/heisei/Desktop/INFORMACION NECESARIA.txt",
+		"/home/heisei/Desktop/Pseudcodigo_Servidores.txt",
+		"/home/heisei/Desktop/Act. N° 1. Brs. Jesús Gonzalez y César Zabala..docx",
+		"/home/heisei/Desktop/Clase ColaLineal",
+		"/home/heisei/Desktop/LinkedListImplementation.java",
+		"/home/heisei/Desktop/AQueueImplementation.java",
+		"/home/heisei/Desktop/Cola.md",
+		"/home/heisei/Desktop/Cola.pseudocodigo",
+		"/home/heisei/Desktop/Prueba.java",
+		"/home/heisei/Desktop/Ejercicio.java",
+		"/home/heisei/Desktop/Diablo/devilutionx",
+		"/home/heisei/NetBeansProjects/AutoClicker/src/autoclicker/AutoClicker.java",
+		"/home/heisei/NetBeansProjects/ClickerV1/src/clicker/Clicker.java",
+		"/usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service",
+		"/usr/share/dbus-1/services/org.knopwob.dunst.service",
+		"/home/heisei/Godot/PongDemo/logic/paddle.gd",
+		"/home/heisei/Godot/PongDemo/logic/wall.gd",
+		"/home/heisei/Godot/PongDemo/pong.tscn",
+		"/home/heisei/Godot/PongDemo/logic/ball.gd",
+		"/home/heisei/NetBeansProjects/AutoClicker/build/built-jar.properties",
+		"/home/heisei/Desktop/DOS/SimCity2/run.bat",
+		"/home/heisei/Desktop/DOS/SimCity2/pick.bat",
+		"/home/heisei/Desktop/Exercises and Projects/PrimeFactor.java",
+		"/home/heisei/NetBeansProjects/AutoClicker/build.xml",
+		"/home/heisei/NetBeansProjects/AutoClicker/manifest.mf",
+		"/home/heisei/Desktop/DOS/TNFSSE/The Need for Speed -  Special Edition (1996).ba1",
+		"/home/heisei/Documents/ROMs/PSP/2018-09-05_v101_typos_titles_soul_no_patchers/sub_dont_click.bat",
+		"/home/heisei/Documents/ROMs/PSP/2018-09-05_v101_typos_titles_soul_no_patchers/patch_files_64bits.bat",
+		"/home/heisei/Documents/ROMs/PSP/2018-09-05_v101_typos_titles_soul_no_patchers/readme.txt",
+		"/home/heisei/Desktop/srwa/2018-09-05_v101_typos_titles_soul_no_patchers/patch_files_64bits.bat",
+		"/home/heisei/Desktop/srwa/2018-09-05_v101_typos_titles_soul_no_patchers/readme.txt",
+		"/home/heisei/Desktop/srwa/2018-09-05_v101_typos_titles_soul_no_patchers/sub_dont_click.bat",
+		"/home/heisei/Desktop/Exercises and Projects/FibonacciNumbers.java",
+		"/home/heisei/NetBeansProjects/CalculadoraDiscretas/dependencias/Matematicas.java",
+		"/home/heisei/Desktop/Exercises and Projects/EulerPrinter.java",
+		"/home/heisei/Desktop/Exercises and Projects/PiPrinter.java",
+		"/home/heisei/Desktop/Exercises and Projects/BigPI.java",
+		"/home/heisei/Desktop/Exercises and Projects/PiShower.java",
+		"/home/heisei/Desktop/Exercises and Projects/Percentages2.java",
+		"/home/heisei/Desktop/Exercises and Projects/NumbersDemo2.java",
+		"/home/heisei/Desktop/Exercises and Projects/BycicleDemo.java",
+		"/home/heisei/Desktop/Exercises and Projects/Percentages.java",
+		"/home/heisei/Desktop/Exercises and Projects/NumbersDemo.java",
+		"/home/heisei/Desktop/BycicleDemo.java",
+		"/home/heisei/Desktop/PiPrinter.java",
+		"/home/heisei/.config/aseprite/scripts/rotar.lua",
+		"/home/heisei/the-eye.eu/public/AudioBooks/Mark Manson - The Subtle Art of Not Giving a Fuck/Mark Manson - The Subtle Art of Not Giving a F_ck (2016).txt",
+		"/home/heisei/Documents/newpipe_subscriptions_202009071938.json",
+		"/home/heisei/the-eye.eu/public/AudioBooks/Game Of Thrones Audiobooks/A Song of Ice and Fire 2 - A Clash of Kings/A Song of Ice and Fire 2 - A Clash of Kings.nfo",
+		"/home/heisei/Desktop/adom/adom",
+		"/home/heisei/Desktop/bloodletter_ld44/fteqw64",
+		"/home/heisei/the-eye.eu/public/AudioBooks/The Hitchhiker's Guide To The Galaxy/00. Douglas Adams - The Hitchhiker's Guide To The Galaxy.nfo",
+		"/home/heisei/Desktop/AutoClicker.java",
+		"/home/heisei/the-eye.eu/public/AudioBooks/The Hitchhiker's Guide To The Galaxy/The.Hitchhiker's.Guide.To.The.Galaxy. Audiobook.Read.by.Douglas.Adams-IPT.sfv",
+		"/home/heisei/the-eye.eu/public/AudioBooks/The Hitchhiker's Guide To The Galaxy/The.Hitchhiker's.Guide.To.The.Galaxy. Audiobook.Read.by.Douglas.Adams-IPT.part01/00. Douglas Adams - The Hitchhiker's Guide To The Galaxy.nfo",
+		"/home/heisei/the-eye.eu/public/AudioBooks/The Hitchhiker's Guide To The Galaxy/IPTorrents.com.txt",
+		"/home/heisei/Desktop/Piskel-0.14.0-64bits/pk.sh",
+		"/home/heisei/Desktop/Ramen.aseprite",
+		"/home/heisei/Downloads/Compressed/Piskel-0.14.0-64bits/piskel",
+		"/home/heisei/Downloads/mupen64plus-bundle-linux64-2.5.9/install.sh",
+		"/home/heisei/Downloads/m64py-0.2.5/README.rst",
+		"/home/heisei/Music/Helltaker/test/command.md",
+		"/home/heisei/Music/Helltaker/test/script.sh",
+		"/home/heisei/.config/menus/xfce-applications.menu",
+		"/home/heisei/.pcsxr/pcsxr.cfg",
+		"/home/heisei/DOS/DK/__support/app/dosboxDK_single.conf",
+		"/home/heisei/DOS/DK/GAME.INS",
+		"/home/heisei/.dosbox/dosbox-0.74.conf",
+		"/home/heisei/javasharedresources/C290M11F1A64P_sharedcc_heisei_G41L00",
+		"/home/heisei/Games/linux64/nacl_helper",
+		"/home/heisei/Games/linux64/nw",
+		"/home/heisei/cataclysmdda-0.D/cataclysm-launcher",
+		"/home/heisei/wget-log",
+		"/run/user/1000/gvfs/ftp:host=192.168.1.2,port=9999/.profig.os",
+		"/home/heisei/DK/libplayit2.sh",
+		"/home/heisei/Desktop/XCOM/GO.BAT",
+		"/home/heisei/Downloads/Compressed/ALPHA GAIDEN ENGLISH/FAQ-cd.txt",
+		"/home/heisei/Downloads/Compressed/ALPHA GAIDEN ENGLISH/normal.bat",
+		"/home/heisei/Downloads/Compressed/ALPHA GAIDEN ENGLISH/SRWAG-E-Readme.txt",
+		"/home/heisei/Downloads/Compressed/ALPHA GAIDEN ENGLISH/cd-tool.lua",
+		"/home/heisei/Downloads/Compressed/UplinkOS_v104_GOLD_STEAM.3/UplinkOS_ReadMe.txt",
+		"/home/heisei/NetBeansProjects/GeneraGrafos/src/Grafos/Grafos.java",
+		"/home/heisei/NetBeansProjects/GeneraGrafos/src/Dibujo/PanelDibujo.java"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1272,
+						"regions":
+						{
+							"col_000000FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										1048,
+										1052
+									]
+								],
+								"scope": "col_000000FF"
+							},
+							"col_000000FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_000000FF_circle.png",
+								"regions":
+								[
+									[
+										1029,
+										1029
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E81414FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										430,
+										437
+									]
+								],
+								"scope": "col_E81414FF"
+							},
+							"col_E81414FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E81414FF_circle.png",
+								"regions":
+								[
+									[
+										411,
+										411
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_FFFFFFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										404,
+										409
+									]
+								],
+								"scope": "col_FFFFFFFF"
+							},
+							"col_FFFFFFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+								"regions":
+								[
+									[
+										396,
+										396
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1656,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/script.js",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5563,
+						"regions":
+						{
+							"col_AADDDDFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										4468,
+										4472
+									]
+								],
+								"scope": "col_AADDDDFF"
+							},
+							"col_AADDDDFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_AADDDDFF_circle.png",
+								"regions":
+								[
+									[
+										4418,
+										4418
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 152.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "miragetools.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 578.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 439.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
