@@ -80,6 +80,30 @@ input[type=text]{
 	margin: 0 auto;
 }
 
+#combat-control-top {
+	width: 100%;
+	display: none;
+	justify-content: center;
+	align-content: space-evenly;
+	border: 1px solid #000;
+	padding: 2em;
+	margin-bottom: 2em;
+}
+
+#current-turn-label {
+	width: 75%;
+	border-radius: 1em;
+}
+
+#start-combat-button, #next-turn-button {
+	display:  block;
+	width: 25%;
+}
+
+#next-turn-button {
+	display: none;
+}
+
 table,th,td {
 	border: 1px solid #000;
 }
@@ -88,6 +112,7 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 	margin: 0 auto;
+	display: none;
 }
 
 th,td{
@@ -101,4 +126,18 @@ th,td{
 	height: 1.75em;
 	width: 75%;
 	text-align: center;
+}
+
+#combat-control-bottom {
+	display: none;
+	border: 1px solid black;
+	margin-top: 2em;
+	width: 100%;
+	justify-content: center;
+	align-content: center;
+	padding: 2em;
+}
+
+#end-combat-button {
+	width: 50%;
 }

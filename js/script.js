@@ -1,4 +1,163 @@
-"use strict"
+ "use strict"
+
+//Class representing a Node with pointers to both a next and previous Node.
+
+class Node {
+            constructor(data){
+                this.data = data;
+                this.next = null;
+                this.previous = null;
+            }
+
+            getData(){
+                return this.data;
+            }
+
+            setData(data) {
+                this.data = data;
+            }
+        }
+
+//Class representing a circular doubly linked list.
+
+        class CircularDoublyLinkedList {
+            constructor(){
+                this.head = null;
+                this.length = 0;
+            }
+
+
+            isEmpty(){
+                return this.head === null;
+            }
+
+            purge() {
+                this.head = null;
+                this.length = 0;
+            }
+
+            getFirst() {
+                return this.head;
+            }
+
+            getLast() {
+                return this.head.previous;
+            }
+
+            getLength() {
+                return this.length;
+            }
+
+            insertAtEnd(data){
+                let newNode = new Node(data);
+                if (this.isEmpty()) {
+                    this.head = newNode;
+                    this.head.next = this.head;
+                    this.head.previous = this.head;
+                    this.length++;
+                } else {
+                    let currentNode = this.head.previous;
+                    currentNode.next = newNode;
+                    newNode.next = this.head;
+                    newNode.previous = currentNode;
+                    this.head.previous = newNode;
+                    this.length++;
+                }
+            }
+
+            insertAtStart(data) {
+                let newNode = new Node(data);
+                if (this.isEmpty()) {
+                    this.head = newNode;
+                    this.head.next = this.head;
+                    this.head.previous = this.head;
+                    this.length++;
+                } else {
+                    newNode.next = this.head;
+                    this.head.previous.next = newNode;
+                    newNode.previous = this.head.previous;
+                    this.head.previous = newNode;
+                    this.head = newNode;
+                    this.length++;
+                }
+            }
+
+            insertBetween(data,node1,node2){
+                let newNode = new Node(data);
+                newNode.next = node2;
+                newNode.previous = node1;
+                node1.next = newNode;
+                node2.previous = newNode;
+            }
+
+            insertInOrder(data){
+                let success = false;
+                if (this.isEmpty()){
+                    this.insertAtStart(data);
+                } else if(this.length === 1){
+                    let current = this.head;
+                    if (data.initiative >= current.data.initiative) {
+                        this.insertAtStart(data);
+                    } else {
+                        this.insertAtEnd(data);
+                    }
+                } else {
+                    let current = this.head;
+                    while (success === false) {
+                        if (data.initiative >= current.data.initiative) {
+                            console.log(current.data);
+                            this.insertBetween(data, current.previous, current);
+                            this.length++;
+                            success = true;
+                        } else {
+                            if (current.next === this.head) {
+                                this.insertAtEnd(data);
+                                success = true;
+                            } else {
+                                current = current.next;
+                            }
+                        }
+                    }
+                }
+            }
+
+            search(searchID) {
+                let current = this.head;
+                if (current.data.id == searchID) {
+                    return current;
+                } else {
+                    while(current.next !== this.head){
+                        if (current.data.id === searchID) {
+                            console.log("Found " + current.data.name)
+                            return current;
+                        } else {
+                            current = current.next;
+                        }
+                    }
+                }
+                throw "Element not found!";
+            }
+
+            remove(id){
+                if (this.isEmpty()) {
+                    throw "List is empty!"
+                } else {
+                    let toDelete = this.search(id);
+                    console.log("Deleting " + toDelete.data.name);
+                    if (this.length === 1) {
+                        this.head = null;
+                        this.length--;
+                    } else {
+                        toDelete.previous.next = toDelete.next;
+                        toDelete.next.previous = toDelete.previous;
+                        if(toDelete === this.head) {
+                            this.head = toDelete.next;
+                        }
+                        this.length--;
+                    }
+                }
+            }
+        }
 
 //Class representing a die or a set of die.
 
@@ -91,12 +250,20 @@ class Creature {
     }
 }
 
-//Class that represents the current encounter and keeps the list sorted based on initiative
+/* Class that represents the current encounter. Has a creature list for displaying a table in the DOM, 
+as well as a list that's used to display the current turn when combat starts. */
 
 class Encounter {
     constructor() {
         this.creatures = [];
+        this.turnList = new CircularDoublyLinkedList();
         this.idCounter = 0;
+        this.isInCombat = false;
+        this.currentTurn = null;
+    }
+
+    isEmpty() {
+        return this.creatures.length === 0;
     }
 
     add(newCreature) {
@@ -119,12 +286,69 @@ class Encounter {
         this.creatures.splice(index,1);
     }
 
+    emptyCreatureList() {
+        this.creatures = [];
+    }
+
     sort() {
         this.creatures.sort((c1,c2) => c2.initiative-c1.initiative)
     }
+
+    startCombat() {
+        this.creatures.forEach((creature) => {
+            console.log('Inserting ' + creature.name + ' into turn list.')
+            this.turnList.insertInOrder(creature);
+        });
+        this.currentTurn = this.turnList.head;
+        this.isInCombat = true;
+    }
+
+    getCurrentTurn() {
+        if (this.currentTurn === null) {
+            return null;
+        } else {
+            return this.currentTurn.data.name;
+        }
+    }
+
+    nextTurn() {
+        this.currentTurn = this.currentTurn.next;
+    }
+
+    previousTurn() {
+        this.currentTurn = this.currentTurn.previous;
+    }
+
+    addToTurnList(creature) {
+        this.turnList.insertInOrder(creature);
+    }
+
+    removeFromTurnList(id) {
+        if (this.currentTurn.data.id === id) {
+            if (this.turnList.length === 1) {
+                this.endCombat();
+            } else {
+                this.nextTurn();
+                UI.onDeleteLabelUpdate(this);
+                this.turnList.remove(id);
+            }
+        } else {
+            this.turnList.remove(id);
+        }
+        
+    }
+
+    endCombat() {
+        this.turnList.purge();
+        this.emptyCreatureList();
+        this.currentTurn = null;
+        this.isInCombat = false;
+        this.idCounter = 0;
+        console.log('Ending combat.');
+    }
 }
 
-//Class that handles updating the DOM and the UI itself
+//Class that handles all tasks regarding the updating of the DOM.
 
 class UI {
     static displayCreatures(currentEncounter) {
@@ -135,6 +359,8 @@ class UI {
             }
         }
 
+        this.unhideTable();
+
         currentEncounter.creatures.forEach(combatant => {
             let newRow = document.createElement('tr');
             newRow.innerHTML = `<td><span class="creature-name">${combatant.name}</span></td>`+
@@ -143,6 +369,83 @@ class UI {
             `<td> <button type="button" class="delete-button">x</button> </td>`;
             combatList.appendChild(newRow);
         });
+    }
+
+    static hideTable(){
+        const table = document.querySelector('table');
+        const turnControlTop = document.querySelector('#combat-control-top');
+        const turnControlBottom = document.querySelector('#combat-control-bottom');
+        turnControlBottom.style.display = 'none';
+        turnControlTop.style.display = 'none';
+        table.style.display = 'none';
+    }
+
+    static unhideTable(){
+        const table = document.querySelector('table');
+        const turnControlTop = document.querySelector('#combat-control-top');
+        const turnControlBottom = document.querySelector('#combat-control-bottom');
+        turnControlBottom.style.display = 'flex';
+        turnControlTop.style.display = 'flex';
+        table.style.display = 'table';
+    }
+
+    static initialTurnLabelUpdate(event){
+        const turnButton = document.querySelector('#next-turn-button');
+        const turnLabel = document.querySelector('#current-turn-label');
+        if (event.target.encounterReference.getCurrentTurn().slice(-1).toLowerCase() === 's') {
+            turnLabel.innerHTML = `It is currently ${event.target.encounterReference.getCurrentTurn()}' turn`
+        } else {
+            turnLabel.innerHTML = `It is currently ${event.target.encounterReference.getCurrentTurn()}'s turn`
+        }
+        event.target.style.display = 'none';
+        turnButton.style.display = 'block';
+        this.enableEndButton();
+    }
+
+    static turnLabelUpdate(event) {
+        const turnLabel = document.querySelector('#current-turn-label');
+        event.target.encounterReference.nextTurn();
+        if (event.target.encounterReference.getCurrentTurn().slice(-1).toLowerCase() === 's') {
+            turnLabel.innerHTML = `It is currently ${event.target.encounterReference.getCurrentTurn()}' turn`
+        } else {
+            turnLabel.innerHTML = `It is currently ${event.target.encounterReference.getCurrentTurn()}'s turn`
+        }
+    }
+
+    static onDeleteLabelUpdate(encounter) {
+        const turnLabel = document.querySelector('#current-turn-label');
+        if (encounter.getCurrentTurn().slice(-1).toLowerCase() === 's') {
+            turnLabel.innerHTML = `It is currently ${encounter.getCurrentTurn()}' turn`
+        } else {
+            turnLabel.innerHTML = `It is currently ${encounter.getCurrentTurn()}'s turn`
+        }
+    }
+
+    static enableEndButton(){
+        const endCombatButton = document.querySelector('#end-combat-button');
+        endCombatButton.disabled = false;
+    }
+
+    static disableEndButton(){
+        const endCombatButton = document.querySelector('#end-combat-button');
+        endCombatButton.disabled = true;
+    }
+
+    static reset() {
+        const combatList = document.querySelector("#combat-list");
+        const startCombatButton = document.querySelector('#start-combat-button');
+        const turnButton = document.querySelector('#next-turn-button');
+        const turnLabel = document.querySelector('#current-turn-label');
+        if (combatList.children.length > 0) {
+            while (combatList.children.length > 0) {
+                combatList.removeChild(combatList.lastChild);
+            }
+        }
+        turnLabel.innerHTML = 'Combat has not currently started.';
+        turnButton.style.display = 'none';
+        startCombatButton.style.display = 'block';
+        this.hideTable();
+        this.disableEndButton();
     }
 }
 
@@ -160,8 +463,11 @@ addCreatureButton.addEventListener('click', (e) => {
     let bonusesField = document.querySelector('#initiative-bonuses');
     let newCreature = new Creature(nameField.value, parseInt(dexField.value), parseInt(bonusesField.value));
     e.target.encounterReference.add(newCreature);
+    if (e.target.encounterReference.isInCombat) {
+        e.target.encounterReference.addToTurnList(newCreature);
+    }
     UI.displayCreatures(e.target.encounterReference);
-}); 
+});
 
 //Event that removes creature from the encounter
 
@@ -174,5 +480,41 @@ combatList.addEventListener('click', (e) => {
         let combatList = rowToDelete.parentElement;
         combatList.removeChild(rowToDelete);
         combatList.encounterReference.remove(creatureToDeleteID);
+        if (combatList.encounterReference.isInCombat) {
+            combatList.encounterReference.removeFromTurnList(creatureToDeleteID);    
+        }
+        if (combatList.encounterReference.isEmpty()) {
+            UI.reset();
+            combatList.encounterReference.endCombat();
+        }
     }
+})
+
+//Event that starts combat and allows the use of the turn list inside the encounter instance.
+
+const startCombatButton = document.querySelector('#start-combat-button');
+startCombatButton.encounterReference = encounter;
+startCombatButton.addEventListener('click',(e) => {
+    const turnButton = document.querySelector('#next-turn-button');
+    const turnLabel = document.querySelector('#current-turn-label');
+    console.log(e.target.encounterReference);
+    e.target.encounterReference.startCombat();
+    UI.initialTurnLabelUpdate(e);
+});
+
+//Event that cycles through turns in the encounter instance and displays the current turn.
+
+const nextTurnButton = document.querySelector('#next-turn-button');
+nextTurnButton.encounterReference = encounter;
+nextTurnButton.addEventListener('click', (e) => {
+    UI.turnLabelUpdate(e);
+})
+
+//Event that ends combat
+
+const endCombatButton = document.querySelector('#end-combat-button');
+endCombatButton.encounterReference = encounter;
+endCombatButton.addEventListener('click',(e) => {
+    UI.reset();
+    e.target.encounterReference.endCombat();
 })

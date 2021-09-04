@@ -21,13 +21,24 @@
                 <input maxlength="2" type="text" name="dex-score" id="dex-score">
             </div>
             <div class="form-group">
-                <label maxlength="2" for="initiative-bonuses">Initiative Bonuses:</label>
+                <label maxlength="2" for="initiative-bonuses">Additional initiative bonuses (feats, etc.):</label>
                 <input type="text" name="initiative-bonuses" id="initiative-bonuses">
             </div>
             <button type="button" id="add-button">Add to combat</button>      
         </form>
     </div>
     <div class="table-container">
+        <div id="combat-control-top">
+            <div id="current-turn-label">
+                Combat has not currently started.
+            </div>
+            <button id="start-combat-button">
+                Start Combat
+            </button>
+            <button id="next-turn-button">
+                Next Turn
+            </button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -40,6 +51,11 @@
 
             </tbody>
         </table>
+        <div id="combat-control-bottom">
+            <button id="end-combat-button" disabled>
+                End Combat
+            </button>
+        </div>
     </div>
         
     
