@@ -172,11 +172,11 @@ class Dice {
     }
 
     static rollAdv(amount, faces, modifier = 0){
-        return Math.max(roll(amount,faces,modifier),roll(amount,faces,modifier));
+        return Math.max(Dice.roll(amount,faces,modifier),Dice.roll(amount,faces,modifier));
     }
 
     static rollDisadv(amount, faces, modifier = 0){
-        return Math.min(roll(amount,faces,modifier),roll(amount,faces,modifier));
+        return Math.min(Dice.roll(amount,faces,modifier),Dice.roll(amount,faces,modifier));
     }
 }
 
@@ -242,11 +242,22 @@ class StatCalculator {
 //Class representing a creature currently in combat.
 
 class Creature {
-    constructor(name, dexterity, initiativeModifier) {
+    constructor(name, dexterity, initiativeModifier, mode) {
         this.name = name;
         this.id = -1;
-        let dexterityModifier = StatCalculator.calculateAbilityModifier(dexterity);
-        this.initiative = Dice.roll(1,20,initiativeModifier) + dexterityModifier;
+        if (initiativeModifier === undefined && mode === undefined) {
+            this.initiative = dexterity;
+        } else {
+            let dexterityModifier = StatCalculator.calculateAbilityModifier(dexterity);
+            switch(mode){
+                case 0:this.initiative = Dice.roll(1,20,initiativeModifier) + dexterityModifier;
+                break;
+                case 1:this.initiative = Dice.rollAdv(1,20,initiativeModifier) + dexterityModifier;
+                break;
+                case 2:this.initiative = Dice.rollDisadv(1,20,initiativeModifier) + dexterityModifier;
+                break;
+            }
+        }    
     }
 }
 
@@ -431,6 +442,66 @@ class UI {
         endCombatButton.disabled = true;
     }
 
+    static enableFixedMode(event) {
+        const fixedButton = event.target;
+        const rollButton = document.querySelector('#roll-init-button');
+        const dexField = document.querySelector('#dex-score');
+        const initField = document.querySelector('#initiative-bonuses');
+        const fixedInit = document .querySelector('#init-score');
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach((rbtn) => {
+            rbtn.disabled = true;
+        });
+        fixedButton.disabled = true;
+        rollButton.disabled = false;
+        dexField.value = '';
+        dexField.disabled = true;
+        initField.value = '';
+        initField.disabled = true;
+        fixedInit.value = '';
+        fixedInit.disabled = false; 
+    }
+
+    static enableRollMode(event) {
+        const rollButton = event.target;
+        const fixedButton = document.querySelector('#fixed-init-button');
+        const dexField = document.querySelector('#dex-score');
+        const initField = document.querySelector('#initiative-bonuses');
+        const fixedInit = document.querySelector('#init-score');
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach((rbtn) => {
+            rbtn.disabled = false;
+        });
+        rollButton.disabled = true;
+        fixedButton.disabled = false;
+        dexField.disabled = false;
+        dexField.value = '';
+        initField.disabled = false;
+        initField.value = '';
+        fixedInit.disabled = true;
+        fixedInit.value = '';
+    }
+
+    static initialForm() {
+        const rollButton = document.querySelector('#roll-init-button');
+        const fixedButton = document.querySelector('#fixed-init-button');
+        const dexField = document.querySelector('#dex-score');
+        const initField = document.querySelector('#initiative-bonuses');
+        const fixedInit = document .querySelector('#init-score');
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach((rbtn) => {
+            rbtn.disabled = false;
+        });
+        rollButton.disabled = true;
+        fixedButton.disabled = false;
+        dexField.disabled = false;
+        dexField.value = '';
+        initField.disabled = false;
+        initField.value = '';
+        fixedInit.disabled = true;
+        fixedInit.value = '';
+    }
+
     static reset() {
         const combatList = document.querySelector("#combat-list");
         const startCombatButton = document.querySelector('#start-combat-button');
@@ -453,19 +524,57 @@ class UI {
 
 const encounter = new Encounter();
 
+//Reset the form to initial state on load.
+
+UI.initialForm();
+
+//Event that switches the form to fixed mode.
+
+const fixedInitButton = document.querySelector('#fixed-init-button');
+fixedInitButton.addEventListener('click', (e) => {
+    UI.enableFixedMode(e);
+});
+
+//Event that switches the form to roll mode.
+
+const rollInitButton = document.querySelector('#roll-init-button');
+rollInitButton.addEventListener('click', (e) => {
+    UI.enableRollMode(e);
+});
+
 //Event that takes the input from input fields and adds it to the DOM.
  
 const addCreatureButton = document.querySelector('#add-button');
 addCreatureButton.encounterReference = encounter;
 addCreatureButton.addEventListener('click', (e) => {
-    let nameField = document.querySelector('#creature-name');
-    let dexField = document.querySelector('#dex-score');
-    let bonusesField = document.querySelector('#initiative-bonuses');
-    let newCreature = new Creature(nameField.value, parseInt(dexField.value), parseInt(bonusesField.value));
-    e.target.encounterReference.add(newCreature);
-    if (e.target.encounterReference.isInCombat) {
-        e.target.encounterReference.addToTurnList(newCreature);
+    const disabledButton = document.querySelector('button:disabled');
+    const nameField = document.querySelector('#creature-name');
+    const dexField = document.querySelector('#dex-score');
+    const bonusesField = document.querySelector('#initiative-bonuses');
+    const initiativeField = document.querySelector('#init-score');
+
+    let newCreature;
+
+    if (disabledButton.id === 'roll-init-button') {
+        const radioOption = document.querySelector('input[type="radio"]:checked');     
+        switch(radioOption.id){
+            case "option-norm": newCreature = new Creature(nameField.value, parseInt(dexField.value), parseInt(bonusesField.value),0);
+            break;
+            case "option-adv": newCreature = new Creature(nameField.value, parseInt(dexField.value), parseInt(bonusesField.value), 1);
+            break;
+            case "option-dis": newCreature = new Creature(nameField.value, parseInt(dexField.value), parseInt(bonusesField.value),2);
+            break;
+            default: newCreature = {};
+            break;
+        }
+        
+    } else {
+        newCreature = new Creature(nameField.value, parseInt(initiativeField.value));
     }
+    e.target.encounterReference.add(newCreature);
+        if (e.target.encounterReference.isInCombat) {
+            e.target.encounterReference.addToTurnList(newCreature);
+        }
     UI.displayCreatures(e.target.encounterReference);
 });
 

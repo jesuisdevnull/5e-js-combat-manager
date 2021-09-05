@@ -11,10 +11,18 @@
     <h1 id="tool-title">Combat Manager</h1>
     <div class="main-container">
         <h2 id="tool-subtitle">Add creature to combat</h2>
-        <form>
+            <div class="form-group button-group">
+                <button id="roll-init-button" disabled>Roll Initiative</button>
+                <button id="fixed-init-button">Fixed Initiative</button>
+            </div>
+        <form> 
             <div class="form-group">
                 <label for="creature-name">Name:</label>
                 <input maxlength="20" type="text" name="creature-name" id="creature-name">
+            </div>
+            <div class="form-group">
+                <label for="init-score">Initiative:</label>
+                <input type="text" name="init-score" id="init-score" disabled>
             </div>
             <div class="form-group">
                 <label for="creature-name">DEX Score:</label>
@@ -24,7 +32,17 @@
                 <label maxlength="2" for="initiative-bonuses">Additional initiative bonuses (feats, etc.):</label>
                 <input type="text" name="initiative-bonuses" id="initiative-bonuses">
             </div>
-            <button type="button" id="add-button">Add to combat</button>      
+            <div class="form-group">
+                <div id="radio-group">
+                    <label for="option-norm">Normal</label>
+                    <input type="radio" name="roll-options" id="option-norm">
+                    <label for="option-adv">Advantage</label>
+                    <input type="radio" name="roll-options" id="option-adv">
+                    <label for="option-dis">Disadvantage</label>
+                    <input type="radio" name="roll-options" id="option-dis">
+                </div>
+            </div>
+        <button type="button" id="add-button">Add to combat</button>      
         </form>
     </div>
     <div class="table-container">
@@ -48,7 +66,6 @@
                 </tr>
             </thead>
             <tbody id="combat-list">
-
             </tbody>
         </table>
         <div id="combat-control-bottom">
@@ -57,8 +74,6 @@
             </button>
         </div>
     </div>
-        
-    
     <script src="../js/script.js"></script>
 </body>
 </html>
