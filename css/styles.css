@@ -1,4 +1,4 @@
-/* Root and Variables */
+/* ========================================================================================== */
 
 :root {
 	font-family: sans-serif;
@@ -9,18 +9,32 @@
 	box-sizing: border-box;
 }
 
-/* Typography */
+/* =======================================Typography======================================= */
 
 form input,button,label {
-	font-size: clamp(1rem,1.2rem,1.8rem);
+	font-size: clamp(1rem,1.1rem,1.5rem);
 }
 
 thead {
 	font-size: clamp(1.2rem,1.5rem,1.8rem);
+
+}
+
+@media screen and (max-width: 600px){ 
+	thead {
+		font-size: 1.2rem;
+	}
 }
 
 tbody {
 	font-size: clamp(0.7rem, 1.2rem, 1.5rem);
+	text-align: center;
+}
+
+@media screen and (max-width: 600px){ 
+	tbody {
+		font-size: 1rem;
+	}
 }
 
 .delete-button {
@@ -28,15 +42,44 @@ tbody {
 	font-weight: bold;
 }
 
+#combat-control-top, #combat-control-bottom {
+	font-size: clamp(1.2rem,1.5rem,1.8rem);
+}
 
-/* Colors */
+#end-combat-button {
+	font-size: 1rem;
+}
+
+
+/* =====================================Colors============================================ */
+
+body {
+	background: #DDDDDD;
+}
+
+.main-container {
+	background:  white;
+}
+
+.table-container {
+	background: white;
+}
+
+thead th {
+	background-color: #2D2D2D;
+	color: white;
+}
+
+tr:nth-child(odd){
+	background: #FFDCC2;
+}
 
 .delete-button {
 	color: white;
 	background-color: #E81414;
 }
 
-/* Layout */
+/* ======================================Layout=========================================== */
 
 #tool-title {
 	text-align: center;
@@ -47,12 +90,18 @@ tbody {
 }
 
 .main-container{
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
-	width: min(70%, 550px);
+
+	padding: 1.5em 3em;
+	margin: 0 auto;
+	border-radius: 2em;
+
+	
+	width: min(70%, 700px);
+	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.2), 0 0.3em 1.5em 0 rgba(0, 0, 0, 0.19);
 }
 
 .button-group {
@@ -60,10 +109,27 @@ tbody {
 	gap: 1.5em;
 }
 
+@media screen and (max-width: 600px) {
+	.button-group {
+		flex-direction: column;
+		gap: 1em;
+		margin-bottom: 1em;
+	}
+}
+
 .button-group button {
 	padding: 1em 2em;
 	margin: 1em 0;
 	width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+	.button-group button {
+		padding: 1em 2em;
+		margin: 0;
+		width: 75%;
+		align-self: center;
+	}
 }
 
 form {
@@ -74,48 +140,111 @@ form {
 	margin-bottom: 2em;
 }
 
+.form-group {
+	margin: 0.5em 0;
+}
+
 form button {
 	padding: 1em 2em;
 	margin: 1em 0;
 	width: 100%;
 }
 
-input[type=text]{
+input[type=text] {
 	width: 100%;
-	padding: 1em 2rem;
-	margin: 0.5rem 0;
+	padding: 1.2em 1em;
+	margin: 0.5em 0;
+  	outline: none;
+  	transition: 0.3s;
 }
 
 #radio-group {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	
 	padding: 1em;
 }
 
+@media screen and (max-width: 650px) {
+	#radio-group {
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		
+		padding: 1em;
+		gap: 0.5em;
+	}
+}
+
 .table-container {
-	width: min(80%, 1200px);
-	margin: 0 auto;
+	width: min(80%, 900px);
+	margin: 2em auto 2em auto;
+	border-radius: 0.5em;
+	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.2), 0 0.3em 1.5em 0 rgba(0, 0, 0, 0.19);
 }
 
 #combat-control-top {
 	width: 100%;
 	display: none;
-	justify-content: center;
-	align-content: space-evenly;
-	border: 1px solid #000;
-	padding: 2em;
+	justify-content: space-around;
+	align-content: line-start;
 	margin-bottom: 2em;
 }
 
+.vertically-center {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#combat-control-top p {
+	width: 100%;
+	align-self: center;
+	padding: 0;
+	margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+	#combat-control-top {
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		padding: 1em;
+		gap: 1em;
+	}
+
+	.combat-button-container {
+		align-self: center;
+		width: 100%;
+	}
+}
+
 #current-turn-label {
-	width: 75%;
-	border-radius: 1em;
+	display: block;
+	width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+	#current-turn-label {
+		align-self: center;
+	}
 }
 
 #start-combat-button, #next-turn-button {
 	display:  block;
-	width: 25%;
+	padding: 1em;
+	width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+	#start-combat-button, #next-turn-button {
+		display:  block;
+		align-self: center;
+		width: 100%;
+	}
 }
 
 #next-turn-button {
@@ -123,7 +252,6 @@ input[type=text]{
 }
 
 table,th,td {
-	border: 1px solid #000;
 }
 
 table {
@@ -139,23 +267,24 @@ th,td{
 
 .delete-button {
 	display: block;
-	margin: auto;	
+	margin: 0;
 	border: none;
 	height: 1.75em;
-	width: 75%;
+	width: 100%;
 	text-align: center;
 }
 
 #combat-control-bottom {
 	display: none;
-	border: 1px solid black;
 	margin-top: 2em;
 	width: 100%;
 	justify-content: center;
-	align-content: center;
-	padding: 2em;
+	align-content: space-around;
+	gap: 1em;
+	padding: 1em;
 }
 
 #end-combat-button {
 	width: 50%;
+	padding: 1em;
 }

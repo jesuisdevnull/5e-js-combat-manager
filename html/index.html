@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 id="tool-title">Combat Manager</h1>
     <div class="main-container">
-        <h2 id="tool-subtitle">Add creature to combat</h2>
             <div class="form-group button-group">
                 <button id="roll-init-button" disabled>Roll Initiative</button>
                 <button id="fixed-init-button">Fixed Initiative</button>
@@ -18,7 +16,10 @@
         <form> 
             <div class="form-group">
                 <label for="creature-name">Name:</label>
-                <input maxlength="20" type="text" name="creature-name" id="creature-name">
+                <div class="input-con-icono">
+                    <input maxlength="20" type="text" name="creature-name" id="creature-name">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>  
+                </div>
             </div>
             <div class="form-group">
                 <label for="init-score">Initiative:</label>
@@ -34,12 +35,18 @@
             </div>
             <div class="form-group">
                 <div id="radio-group">
-                    <label for="option-norm">Normal</label>
-                    <input type="radio" name="roll-options" id="option-norm">
-                    <label for="option-adv">Advantage</label>
-                    <input type="radio" name="roll-options" id="option-adv">
-                    <label for="option-dis">Disadvantage</label>
-                    <input type="radio" name="roll-options" id="option-dis">
+                    <div class="radio-container">
+                        <label for="option-norm">Normal</label>
+                        <input type="radio" name="roll-options" id="option-norm" checked>
+                    </div>
+                    <div class="radio-container">
+                        <label for="option-adv">Advantage</label>
+                    <input type="radio" name="roll-options" id="option-adv">  
+                    </div>
+                    <div class="radio-container">
+                        <label for="option-dis">Disadvantage</label>
+                        <input type="radio" name="roll-options" id="option-dis">
+                    </div>
                 </div>
             </div>
         <button type="button" id="add-button">Add to combat</button>      
@@ -47,15 +54,20 @@
     </div>
     <div class="table-container">
         <div id="combat-control-top">
-            <div id="current-turn-label">
-                Combat has not currently started.
+            <div class="vertically-center">
+                <p id="current-turn-label">
+                    Combat has not currently started.
+                </p>
             </div>
-            <button id="start-combat-button">
+            <div class="combat-button-container">
+                <button id="start-combat-button">
                 Start Combat
-            </button>
+                </button>
+            
             <button id="next-turn-button">
                 Next Turn
             </button>
+            </div>
         </div>
         <table>
             <thead>

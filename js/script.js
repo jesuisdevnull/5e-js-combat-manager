@@ -1,4 +1,5 @@
  "use strict"
+/* ========================================================================= */
 
 //Class representing a Node with pointers to both a next and previous Node.
 
@@ -306,6 +307,7 @@ class Encounter {
     }
 
     startCombat() {
+
         this.creatures.forEach((creature) => {
             console.log('Inserting ' + creature.name + ' into turn list.')
             this.turnList.insertInOrder(creature);
@@ -389,15 +391,19 @@ class UI {
         turnControlBottom.style.display = 'none';
         turnControlTop.style.display = 'none';
         table.style.display = 'none';
+        table.style.padding = '0';
     }
 
     static unhideTable(){
         const table = document.querySelector('table');
+        const container = document.querySelector('.table-container');
         const turnControlTop = document.querySelector('#combat-control-top');
         const turnControlBottom = document.querySelector('#combat-control-bottom');
         turnControlBottom.style.display = 'flex';
         turnControlTop.style.display = 'flex';
+        table.style.padding = '2em';
         table.style.display = 'table';
+        container.style.padding = '3em';
     }
 
     static initialTurnLabelUpdate(event){
@@ -458,7 +464,7 @@ class UI {
         dexField.disabled = true;
         initField.value = '';
         initField.disabled = true;
-        fixedInit.value = '';
+        fixedInit.value = '0';
         fixedInit.disabled = false; 
     }
 
@@ -475,9 +481,9 @@ class UI {
         rollButton.disabled = true;
         fixedButton.disabled = false;
         dexField.disabled = false;
-        dexField.value = '';
+        dexField.value = '0';
         initField.disabled = false;
-        initField.value = '';
+        initField.value = '0';
         fixedInit.disabled = true;
         fixedInit.value = '';
     }
@@ -495,9 +501,9 @@ class UI {
         rollButton.disabled = true;
         fixedButton.disabled = false;
         dexField.disabled = false;
-        dexField.value = '';
+        dexField.value = '0';
         initField.disabled = false;
-        initField.value = '';
+        initField.value = '0';
         fixedInit.disabled = true;
         fixedInit.value = '';
     }
@@ -520,6 +526,8 @@ class UI {
     }
 }
 
+/* ========================================================================= */
+
 //Global variable for the encounter.
 
 const encounter = new Encounter();
@@ -527,6 +535,8 @@ const encounter = new Encounter();
 //Reset the form to initial state on load.
 
 UI.initialForm();
+
+/* ========================================================================= */
 
 //Event that switches the form to fixed mode.
 
